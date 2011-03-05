@@ -1,0 +1,489 @@
+/*   
+Theme Name: 7Honeycomb
+Theme URI:
+Description:This theme supports widget, threaded-comments, nav-menu. Test version.
+Author: 7lemon
+Author URI:http://www.7lemon.net
+Version: 0.1
+Tags: blue, custom-menu, three-columns, fixed-width, threaded-comments
+*/
+
+body, h1, h2, h3, h4, h5, h6, blockquote, p{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	margin: 0;
+	font-family: Arial, Helvetic, Georgia, Sans-serif;
+	font-size: 12px;
+	text-align: center;
+	vertical-align: top;
+	background: #050608 url(images/glowy_hex.jpg) no-repeat;
+	color: #4489ae;
+}
+
+h1{
+	font-family: "Microsoft YaHei", Verdana, Georgia, Sans-serif;
+	font-size: 24px;
+	padding: 0 0 10px 0;
+}
+
+a:link, a:visited{
+	text-decoration: none;
+	color: #f2f7ff;
+}
+
+a:hover{
+	text-decoration: none;
+	color: #76accf;
+}
+
+a img{
+	border: none;
+}
+
+p{
+	padding: 10px 0 0 0;
+}
+
+hr{
+	border: 1px solid #4489ae;
+}
+
+#wrapper{
+	margin: 0 auto 0 auto;
+	width: 900px;
+	text-align: left;
+}
+
+/* Header style start: */
+
+#header{
+	float: left;
+	width: 900px;
+	height: 230px;
+}
+
+.title{
+	float: left;
+	width: 400px;
+	height: 150px;
+}
+
+.title h1{
+	font-size: 28px;
+	width: 300px;
+	height: 50px;
+	line-height: 50px;
+	padding: 20px 0 10px 20px;
+}
+
+.title span{
+	font-size: 15px;
+	padding-left: 100px;
+}
+.menubar{
+	width: 900px;
+	height: 50px;
+	float: left;
+	font-size: 15px;
+	font-family: "Microsoft YaHei", Verdana, Georgia, Sans-serif;
+	background: url(images/head-menu-light.png) no-repeat;
+}
+.menubar ul li{
+	display: inline;
+	list-style-type: none;
+}
+
+ul#menus, ul.menus{
+	margin:0;
+	padding: 0;
+}
+
+#menus li a{
+	float: left;
+	display: block;
+	line-height: 50px;
+	height: 50px;
+	padding: 0 20px;
+	margin: 0 5px;
+	color: #fff;
+}
+
+#menus li a:hover{
+	color:#fff; 
+	text-decoration:none;
+	background: url(images/head-menu-a.png);
+}
+
+#menus li ul{
+	display: none;
+	position: absolute;
+}
+
+#menu li li{
+	float: left;
+}
+
+#menus li li a{
+	text-align: center;
+	width:100px;
+}
+
+#menus li li a:hover{
+	background: none;
+}
+
+.menus .current_page_item a, .menus .current_page_item a:visited,
+.menus .current-cat a, .menus .current-cat a:visited
+{ 
+	color:#fff;
+	background: url(images/head-menu-a.png);
+}
+
+.menus .current_page_item a:hover, .menus .current-cat a:hover
+{
+	color:#fff;
+	text-decoration:none;
+	background: url(images/head-menu-a.png);
+}
+
+.menus .current_page_item ul a, .menus .current_page_item ul a:visited, .menus .current_page_item ul a:hover,
+.menus .current-cat ul a, .menus .current-cat ul a:visited, .menus .current-cat ul a:hover
+ {
+	border-bottom:1px solid #ccc;
+}
+
+.user_menu{
+	float: right;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 10px 30px 0 30px;
+	border-bottom: 1px solid #153b72;
+}
+
+.user_menu ul, .user_menu li{
+	display: inline;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.user_menu a{
+	height: 30px;
+	line-height: 30px;
+	padding: 8px 10px;
+}
+
+.user_menu .current_page_item a{
+	color: #000;
+}
+
+.user_menu .current_page_item ul a, .user_menu .current_page_item ul a:visited,
+.user_menu .current_page_item a, .user_menu .current_page_item a:visited{
+	background-color: #153b72;
+}
+
+.user_menu a:hover{
+	color: #000;
+	background-color: #153b72;
+}
+/* Header style end */
+
+
+/* Container style start: */
+#container{
+	float: left;
+	width: 650px;
+}
+
+.post{
+	padding: 0 0px 10px 0px;
+	margin: 0 0 10px 0;
+}
+
+.post h2{
+	font-family: "Microsoft YaHei", Verdana, Sans-serif, Georgia;
+	font-size: 18px;
+	color: #93c4f1;
+	height: 30px;
+	background: url(images/h2-back.png) no-repeat;
+	padding-top: 40px;
+	padding-left: 20px;
+	line-height: 30px;
+	vertical-align: bottom;
+}
+
+.post h3{
+	font-family: "Microsoft YaHei", Verdana, Sans-serif, Georgia;
+	font-size: 16px;
+	color: #93c4f1;
+}
+
+.entry{
+	padding: 5px 25px 40px 25px;
+	line-height: 22px;
+	border-top: none;
+	background: url(images/entry-back.png);
+}
+
+.post-content{
+	padding-bottom: 10px;
+	border-bottom: 1px solid #153b72;
+}
+
+p.postmetadata{
+	text-align: right;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.comments-template, .comment-respond{
+	margin: 10px 0 10px 0;
+	width:650px;
+	float:left;
+}
+
+.comments-template h3{
+	font-family: "Microsoft YaHei", Verdana, Sans-serif, Georgia;
+	font-size: 16px;
+	color: #fff;
+	height: 30px;
+	line-height: 30px;
+	background: url(images/comment-h3-background.jpg) no-repeat;
+	padding-left: 20px;
+}
+
+.comments-template ol{
+	padding: 20px 10px 20px 20px;
+	margin: 5px 5px 5px 10px;
+}
+
+.comments-template ol li{
+	padding: 10px 10px 20px 20px;
+	margin: 10px 5px 5px 10px;
+	border: 2px solid #42b4ff;
+}
+
+.comments-template ol ul{
+	padding: 10px 10px 10px 20px;
+	margin: 5px 5px 5px 5px;
+	list-style: none;
+}
+
+.comment-author{
+	font-size: 14px;
+	font-weight: 900;
+}
+
+.reply{
+	text-align: right;
+	padding-right: 20px;
+}
+
+.comment-respond{
+	background: url(images/entry-back.png);
+}
+
+#respond{
+	font-size: 16px;
+	padding: 10px 20px 20px 20px
+}
+
+#respond input, #respond textarea{
+	font-family: "Microsoft YaHei", Verdana, Sans-serif, Georgia;
+	font-size: 14px;
+	
+}
+
+#respond input{
+	height: 20px;
+	line-height: 20px;
+}
+
+input#submit{
+	font-size: 16px;
+	border: 0;
+	height: 28px;
+	line-height: 28px;
+}
+
+.navigation{
+	width: 650px;
+	height: 25px;
+	float: left;
+	padding: 10px 0 0 0;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 25px;
+	border-top: 1px solid #153b72;
+}
+
+.navigation .previous-post-link{
+	width: 325px;
+	float: left;
+	text-align: left;
+}
+
+.navigation .next-post-link{
+	width: 325px;
+	float: left;
+	text-align: right;
+}
+
+.navigation .previous-post-link p{
+	padding-left: 30px;
+}
+
+.navigation .next-post-link p{
+	padding-right: 30px;
+}
+
+.wp-pagenavi span.pages, .wp-pagenavi span.current, .wp-pagenavi span.extend{
+	padding:5px 8px;
+}
+
+.previous-post-link a, .next-post-link a,.wp-pagenavi a{
+	padding: 5px 8px;
+}
+
+.previous-post-link a:hover, .next-post-link a:hover,
+.wp-pagenavi span.current, .wp-pagenavi a.first:hover, .wp-pagenavi a.last:hover,
+.wp-pagenavi a.page:hover, .wp-pagenavi a.previouspostslink:hover, .wp-pagenavi a.nextpostslink:hover{
+	background-color: #153b72;
+	color: #000;
+}
+
+.page-not-found{
+	width: 900px;
+	height: 400px;
+	background: url(images/404.png) no-repeat;
+}
+
+.page-not-found-msg{
+	padding: 60px 0 0 300px;
+}
+
+.page-not-found-msg h3{
+	color: #fff;
+	font-size: 18px;
+	font-family: "Microsoft YaHei", Verdana, Sans-serif, Georgia;
+	padding-bottom: 20px;
+}
+/* Container style end*/
+
+
+/* Sidebar style start: */
+.sidebar{
+	float: left;
+	width: 240px;
+	margin: 0 0 0 10px;
+	display: inline;
+	border: none;
+}
+
+.sidebar div.welcome{
+	padding: 0 0 0 10px;
+	margin: 5px 0 10px 0;
+}
+
+.sidebar ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0 0 0 10px;
+	margin: 5px 0 10px 0;
+}
+
+.sidebar ul li.widget{
+	padding: 0 0 5px 0;
+	margin: 0 0 5px 0;
+}
+
+.sidebar ul li h2.widgettitle, .sidebar ul li h2{
+	font-family: "Microsoft YaHei", Verdana, Georgia, Sans-serif;
+	font-size: 14px;
+	color: #000;
+	background: url(images/sidebar-h2.png);
+	height:23px;
+	line-height:23px;
+	padding-left: 10px;
+}
+
+.sidebar ul ul li{
+	padding: 0;
+	line-height: 24px;
+}
+
+.social ul li.widget{
+	display: inline;
+}
+
+.social a{
+	float:left;
+}
+
+table#wp-calendar{
+	width: 100%;
+}
+/* Sidebar style end */
+
+/* Footer style start: */
+#footer{
+	clear: both;
+	float:left;
+	width: 900px;
+	height: 300px;
+	font-size: 15px;
+	line-height: 20px;
+	text-align:center;
+	padding-top: 10px;
+	margin-bottom: 20px;
+	background: url(images/footer.png) no-repeat;
+	background-position: 100% 0;
+}
+
+.copyright{
+	font-family: "Microsoft YaHei", Verdana, Georgia, Sans-serif;
+	margin: 100px 50px 100px 0;
+}
+
+.copyright p{
+	line-height: 18px;
+}
+
+.backtotop{
+	font-size: 12px;
+	text-align: right;
+}
+/* Footer style end */
+
+/* Searchform style start: */
+#searchform{
+	padding: 5px 0;
+	width: 230px;
+	height: 50px;
+}
+
+#searchform tr{
+	margin: 0;
+	padding: 0;
+	height: 28px;
+	background-color: #fff;
+}
+
+input#searchtext, input#searchsubmit{
+	height: 22px;
+	line-height: 22px;
+	font-size: 15px;
+	border: 0;
+}
+
+input#searchtext{
+	width: 198px;
+}
+
+input#searchsubmit{
+	background-color: #fff;
+}
+/* Searchform style end*/
