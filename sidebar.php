@@ -5,8 +5,8 @@
 			<div id="social">
 			<table>
 				<tr>
-					<td><a id="rss-feed" title="订阅我吧" href="<?php bloginfo( 'rss2_url' );?>" target="_blank"><img alt="" src="<?php bloginfo( 'url' );?>/wp-content/themes/7honeycomb/images/feed2.png" /></a></td>
-					<td><a title="Follow me on Twitter" href="https://twitter.com" target="_blank"><img alt="" src="<?php bloginfo( 'url' );?>/wp-content/themes/7honeycomb/images/tw1.png" /></a></td>
+					<td><a class="rss-feed" title="订阅我吧" href="<?php bloginfo( 'rss2_url' );?>" target="_blank"><span class="hover">Feed Me</span></a></td>
+					<td><a class="twitter-link" title="Follow me on Twitter" href="https://twitter.com" target="_blank"><span class="hover">Follow Me</span></a></td>
 				</tr>
 			</table>
 			</div>

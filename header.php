@@ -9,21 +9,32 @@
 	<link rel="alternate" type="text/xml" title="RSS.92" href="<?php bloginfo( 'rss_url' );?>" />
 	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo( 'atom_url' );?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url');?>" />
-	
-	<?php wp_get_archives('type=monthly&format=link'); ?>
-	<?php //comments_popup_script(); // off by defalut ?>
+	<?php wp_enqueue_script( 'jquery' ); ?>
+	<?php //comments_popup_script(); // off by defalut?>
 	<?php
 		if ( is_singular() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 	?>
 	<?php wp_head(); ?>
+	<?php $options = get_option('7Honeycomb_options');?>
+	<?php if($options['use_favicon']):?>
+		<link rel="shortcut icon" href="<?php bloginfo('url');?>/<?php echo $options['favicon_url'];?>" type="image/x-icon"/>
+	<?php endif;?>
+	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/button.js"></script>
 </head>
 </head>
 <body>
 <div id="wrapper">
 <div id="header">
 	<div class="title">
-		<div class="blog-name"><h1><a href="<?php bloginfo( 'url' );?>"><?php bloginfo('name');?></a></h1></div>
+		<div class="blog-name">
+		<h1><a href="<?php bloginfo( 'url' );?>">
+			<?php if($options['use_logo']):?>
+				<img alt="" src="<?php bloginfo('template_url');?>/images/<?php echo $options['logo_url'];?>"/>
+			<?php else:?>
+				<?php bloginfo('name');?>
+			<?php endif;?>
+		</a></h1></div>
 		<span><?php bloginfo( 'description' );?></span>
 	</div>
 	<div class="user_menu">
@@ -31,7 +42,7 @@
 	</div>
 	<div class="menubar">
 		<ul id="menus" class="menus"><?php if (is_home()) {$home_menu_class = 'current_page_item';} else {$home_menu_class = 'page_item';}?>
-			<li class="<?php echo($home_menu_class); ?>"><a title="<?php _e('Home', 'default'); ?>" href="<?php echo get_settings('home'); ?>/"><?php _e('Home', 'default'); ?></a></li>
+			<li class="<?php echo($home_menu_class); ?>"><a title="<?php _e('Home', '7Honeycomb'); ?>" href="<?php echo get_settings('home'); ?>/"><?php _e('Home', '7Honeycomb'); ?></a></li>
 			<?php wp_list_categories('depth=0&title_li=0&orderby=name&show_count=0'); ?>
 		</ul>
 	</div>

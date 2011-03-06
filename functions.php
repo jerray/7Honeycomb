@@ -39,6 +39,77 @@ add_action( 'init', 'register_my_sidebar' );
 
 add_theme_support( 'post-thumbnails' );
 
+/* Admin Menu start:*/
+class CustomOptions{
+	
+	function getOptions(){
+		$options = get_option('7Honeycomb_options');
+		
+		if(!is_array($options)){
+			$options = array(
+				'use_logo' => true,
+				'logo_url' => 'logo.png',
+				'use_favicon' => false,
+				'favicon_url' => '',
+			);
+			
+			update_option('7Honeycomb_options', $options);
+		}
+		
+		return $options;
+	}
+	
+	function init(){
+		if(isset($_POST['7Honeycomb_save'])){
+			$options = CustomOptions::getOptions();
+			if($_POST['use_logo']){
+				$options['use_logo'] = (bool) true;
+			} else {
+				$options['use_logo'] = (bool) false;
+			}
+			$options['logo_url'] = stripslashes($_POST['logo_url']);
+			
+			if($_POST['use_favicon']){
+				$options['use_favicon'] = (bool) true;
+			} else {
+				$options['use_favicon'] = (bool) false;
+			}
+			$options['favicon_url'] = stripslashes($_POST['favicon_url']);
+			
+			update_option('7Honeycomb_options', $options);
+		} else {
+			CustomOptions::getOptions();
+		}
+		
+		add_theme_page("主题选项", "主题选项", 'edit_themes', basename(__FILE__), array('CustomOptions', 'display'));
+	}
+	
+	function display(){
+		$options = CustomOptions::getOptions();
+		?>
+		<form action="#" method="POST" enctype="multipart/form-data">
+			<div class="wrap">
+				<div class="config_box">
+					<h3><?php _e('Title config', '7Honeycomb'); ?></h3>
+					<p><label><input name="use_logo" type="checkbox" value="checkbox" <?php if($options['use_logo']) echo 'checked="checked"';?> /><?php _e('Use image logo.', '7Honeycomb');?></label></p>
+					<p><label>Logo image file name: <input name="logo_url" type="text" value="<?php if($options['logo_url']) echo $options['logo_url']; ?>" /></label>( Don't forget to upload image to, wp-content/themes/7Honeycomb/images/ )</p>
+				</div>
+				<div class="config_box">
+					<h3><?php _e('Favicon config', '7Honeycomb'); ?></h3>
+					<p><label><input name="use_favicon" type="checkbox" value="checkbox" <?php if($options['use_favicon']) echo 'checked="checked"';?> /><?php _e('Use favicon.', '7Honeycomb');?></label></p>
+					<p><label>Favicon file name: <input name="favicon_url" type="text" value="<?php if($options['favicon_url']) echo $options['favicon_url']; ?>" /></label>( Don't forget to upload favicon to your wordpress root )</p>
+				</div>
+				<p class="submit">
+					<input type="submit" name="7Honeycomb_save" value="<?php _e('Update Options &raquo;', '7Honeycomb'); ?>" />
+				</p>
+			</div>
+		</form>
+		<?php
+	}
+}
+add_action('admin_menu', array('CustomOptions', 'init'));
+/* Admin Menu end*/
+
 /* Widgets begin:*/
 class Welcome_And_Custom_Feed_Url extends WP_Widget{
 
@@ -74,8 +145,8 @@ class Welcome_And_Custom_Feed_Url extends WP_Widget{
 			<?php endif;?>
 			<table>
 				<tr>
-					<td><a id="rss-feed" title="订阅我吧" href="<?php if($feed){echo $feed;}else{bloginfo( 'rss2_url' );}?>" target="_blank"><img alt="" src="<?php bloginfo( 'url' );?>/wp-content/themes/7honeycomb/images/feed2.png" /></a></td>
-					<td><a title="Follow me on Twitter" href="<?php if($twitter){echo $twitter;}else{echo 'https://twitter.com';}?>" target="_blank"><img alt="" src="<?php bloginfo( 'url' );?>/wp-content/themes/7honeycomb/images/tw1.png" /></a></td>
+					<td><a class="rss-feed" title="订阅我吧"href="<?php if($feed){echo $feed;}else{bloginfo( 'rss2_url' );}?>" target="_blank"><span class="hover">Feed Me</span></a></td>
+					<td><a class="twitter-link" title="Follow me on Twitter" href="<?php if($twitter){echo $twitter;}else{echo 'https://twitter.com';}?>" target="_blank"><span class="hover">Follow Me</span></a></td>
 				</tr>
 			</table>
 		</div>

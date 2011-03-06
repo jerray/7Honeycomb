@@ -254,12 +254,14 @@ p.postmetadata{
 	background: url(images/comment-h3-background.jpg) no-repeat;
 	padding-left: 20px;
 }
-
-.comments-template ol{
-	padding: 20px 10px 20px 20px;
+.comments-list{
+	padding: 30px 10px 20px 20px;
 	margin: 5px 5px 5px 10px;
 }
-
+.comments-template ol{
+	padding: 0;
+	margin: 0;
+}
 .comments-template ol li{
 	padding: 10px 10px 20px 20px;
 	margin: 10px 5px 5px 10px;
@@ -311,21 +313,23 @@ input#submit{
 
 .navigation{
 	width: 650px;
-	height: 25px;
+	height: 30px;
 	float: left;
-	padding: 10px 0 0 0;
+	padding: 10px 0 15px 0;
 	font-size: 14px;
 	font-weight: bold;
 	line-height: 25px;
 	border-top: 1px solid #153b72;
 }
 
+.navigation .previous-comments-link,
 .navigation .previous-post-link{
 	width: 325px;
 	float: left;
 	text-align: left;
 }
 
+.navigation .next-comments-link,
 .navigation .next-post-link{
 	width: 325px;
 	float: left;
@@ -341,13 +345,15 @@ input#submit{
 }
 
 .wp-pagenavi span.pages, .wp-pagenavi span.current, .wp-pagenavi span.extend{
-	padding:5px 8px;
+	padding:5px 8px 5px 8px;
 }
 
+.previous-comments-link a, .next-comments-link a,
 .previous-post-link a, .next-post-link a,.wp-pagenavi a{
-	padding: 5px 8px;
+	padding: 5px 8px 5px 8px;
 }
 
+.previous-comments-link a:hover, .next-comments-link a:hover,
 .previous-post-link a:hover, .next-post-link a:hover,
 .wp-pagenavi span.current, .wp-pagenavi a.first:hover, .wp-pagenavi a.last:hover,
 .wp-pagenavi a.page:hover, .wp-pagenavi a.previouspostslink:hover, .wp-pagenavi a.nextpostslink:hover{
@@ -421,6 +427,33 @@ input#submit{
 
 .social a{
 	float:left;
+}
+
+.rss-feed, .twitter-link{
+	position: relative;
+	width: 110px;
+	height: 110px;
+	display: block;
+	background:url(images/feed.png) top no-repeat;
+	cursor: pointer;
+	text-indent: -99999px;
+}
+
+.rss-feed span.hover, .twitter-link span.hover{
+	position:absolute;
+	display: block;
+	width: 110px;
+	height: 110px;
+	text-indent: -9999px;
+	background: url(images/feed.png) bottom no-repeat;
+}
+
+.twitter-link{
+	background:url(images/twitter.png) top no-repeat;
+}
+
+.twitter-link span.hover{
+	background: url(images/twitter.png) bottom no-repeat;
 }
 
 table#wp-calendar{

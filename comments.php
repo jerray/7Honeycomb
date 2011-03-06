@@ -26,10 +26,23 @@ $oddcomment = 'alt';
 
 	<h3 id="comments"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
 
-<ol class="commentlist">
-	<?php wp_list_comments(); ?>
-</ol>
-
+	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+			<div class="navigation">
+				<div class="previous-comments-link"><?php previous_comments_link( __( '<span class="meta-nav">&laquo;</span> 更早的评论', '7Honeycomb' ) ); ?></div>
+				<div class="next-comments-link"><?php next_comments_link( __( '更新的评论 <span class="meta-nav">&raquo;</span>', '7Honeycomb' ) ); ?></div>
+			</div> <!-- .navigation -->
+	<?php endif; // check for comment navigation ?>
+	<div class="comments-list">
+		<ol class="commentlist">
+			<?php wp_list_comments(); ?>
+		</ol>
+	</div>
+	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+			<div class="navigation">
+				<div class="previous-comments-link"><?php previous_comments_link( __( '<span class="meta-nav">&laquo;</span> 更早的评论', '7Honeycomb' ) ); ?></div>
+				<div class="next-comments-link"><?php next_comments_link( __( '更新的评论 <span class="meta-nav">&raquo;</span>', '7Honeycomb' ) ); ?></div>
+			</div> <!-- .navigation -->
+	<?php endif; // check for comment navigation ?>
 <?php else : // this is displayed if there are no comments so far ?>
 
 <?php if ('open' == $post->comment_status) : ?>
