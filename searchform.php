@@ -2,7 +2,7 @@
 	<table>
 		<tr>
 		<td><input type="text" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="searchtext" /></td>
-		<td><input type="image" id="searchsubmit" value="Search" src="<?php bloginfo( 'url' );?>/wp-content/themes/7honeycomb/images/search.png" /></td>
+		<td><input type="image" id="searchsubmit" value="Search" src="<?php bloginfo('template_url');?>/images/search.png" /></td>
 		</tr>
 	</table>
 </form>
