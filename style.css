@@ -1,11 +1,11 @@
 /*   
 Theme Name: 7Honeycomb
 Theme URI:
-Description:This theme supports widget, threaded-comments, nav-menu. Test version.
+Description:This theme supports widget, threaded-comments, nav-menu, theme-option. It support three widgetized areas(All in the sidebar). User can edit theme option in the Theme Option page. 7Honeycomb has a widget with which user can use to set custom feed url, twitter url and some infomation to his guest. Notice: If you use wp_PageNavi as your page navigation, please disable the pagenavi-css.css in pagenavi options.
 Author: 7lemon
 Author URI:http://www.7lemon.net
-Version: 0.1
-Tags: blue, custom-menu, three-columns, fixed-width, threaded-comments
+Version: 1.0
+Tags: blue, dark, android, honeycomb, nav-menu, three-columns, fixed-width, threaded-comments
 */
 
 body, h1, h2, h3, h4, h5, h6, blockquote, p{
