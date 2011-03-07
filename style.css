@@ -114,7 +114,7 @@ ul#menus, ul.menus{
 #menus li a:hover{
 	color:#fff; 
 	text-decoration:none;
-	background: url(images/head-menu-a.png);
+	background: url(images/head-menu-a.jpg);
 }
 
 #menus li ul{
@@ -139,14 +139,14 @@ ul#menus, ul.menus{
 .menus .current-cat a, .menus .current-cat a:visited
 { 
 	color:#fff;
-	background: url(images/head-menu-a.png);
+	background: url(images/head-menu-a.jpg);
 }
 
 .menus .current_page_item a:hover, .menus .current-cat a:hover
 {
 	color:#fff;
 	text-decoration:none;
-	background: url(images/head-menu-a.png);
+	background: url(images/head-menu-a.jpg);
 }
 
 .menus .current_page_item ul a, .menus .current_page_item ul a:visited, .menus .current_page_item ul a:hover,
@@ -473,7 +473,7 @@ table#wp-calendar{
 	padding-top: 10px;
 	margin-bottom: 20px;
 	background: url(images/footer.png) no-repeat;
-	background-position: 100% 0;
+	background-position: 100% 60%;
 }
 
 .copyright{
